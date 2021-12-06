@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+новости на сайте
+{% endblock %}
+
+{% block content %}
+ <div class="features">
+     <h1>про нас</h1>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam corporis cumque deleniti doloribus dolorum expedita hic maxime, nihil obcaecati pariatur praesentium quos repellendus rerum sed similique sit tempora voluptas.</p>
+     <button class="btn btn-success"> новости на сайте </button>
+
+     {% if news %}
+    {% for el in news %}
+      <div class="alert alert-warning">
+          <h3> {{ el.title }}</h3>
+          <p2> {{el.full_text}} </p2>
+          <br>
+          <a href="{% url 'news-detail' el.id %}" class="btn btn-warning"> читать далее </a>
+
+      </div>
+     {% endfor %}
+     {% else %}
+     <p2>у вас нет записей</p2>
+     {% endif %}
+
+     {# тут пишуться коментарии #}
+ </div>
+{% endblock %}

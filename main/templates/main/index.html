@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+index page
+{% endblock %}
+
+{% block content %}
+ <div class="features">
+     <h1>{{ title }}</h1>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam corporis cumque deleniti doloribus dolorum expedita hic maxime, nihil obcaecati pariatur praesentium quos repellendus rerum sed similique sit tempora voluptas.</p>
+     <button class="btn btn-warning"> на страницу пронас </button>
+    {% for el in values %}
+      <p>{{el}}</p>
+     {% endfor %}
+
+     {{obj.age}}
+     {% for el in obj %}
+      <p>{{el}}</p>
+     {% endfor %}
+
+     {% for el in values %}
+        {% if el == 'hello' %}
+            {% filter upper %}
+            <p>{{ el }}</p>
+            {% endfilter %}
+        {% endif %}
+     {% endfor %}
+
+     {% for el in values %}
+        {% if el == 'hello' %}
+
+            <p>{{ el|upper }}</p>
+
+        {% endif %}
+     {% endfor %}
+ </div>
+{% endblock %}

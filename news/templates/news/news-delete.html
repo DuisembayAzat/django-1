@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+удаление статьи
+{% endblock %}
+
+{% block content %}
+ <div class="features">
+     <h1> Удоление статьи </h1>
+
+     <form method="post" >
+         {% csrf_token %}
+         <button class="btn btn-danger" type="submit">удалить статью</button>
+     </form>
+
+
+     {# CSRF должна быть в форме #}
+ </div>
+{% endblock %}
